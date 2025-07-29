@@ -62,8 +62,15 @@
   .hero-background {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url("hero-bg.png") center center / cover no-repeat;
+    /* background: url("hero-bg.png") center center / cover no-repeat; */
     z-index: -1; /* Place it behind content */
+  }
+
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
   }
 
   /* logo styles */
@@ -307,8 +314,8 @@
     }
 
     /* On mobile, shift the hero background to the right to keep the lighthouse visible */
-    .hero-background {
-      background-position: 19% center;
+    .hero-background img {
+      object-position: 19% center;
     }
   }
 
@@ -415,7 +422,9 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="hero-background"></div> <!-- Added background element -->
+    <div class="hero-background">
+      <img src="hero-bg.png" alt="A lighthouse shining its beam across a dark ocean, symbolizing guidance and security in tenant screening.">
+    </div>
 
     <!-- Logo -->
     <a href="https://usetenanter.com/" class="logo">
