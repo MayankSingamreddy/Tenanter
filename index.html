@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Evidence-first AI tenant screening copilot for small landlords. Verify income, identity, landlord references, and more—audit-ready reports in 24-48h.">
+  <link rel="icon" href="">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Tenanter">
+  <meta property="og:description" content="Evidence-first tenant screening—verify income, identity, landlord references, and more with AI-powered checks.">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="usetenanter.com"> 
+  <meta property="og:type" content="website">
+
+  <!-- GOOGLE FONTS - replace with your own family/weights -->
+  <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400&family=Manrope:wght@300;400&display=swap" rel="stylesheet">
+  
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <title>Tenanter</title>
+
+  <style>
+  /* ----------  RESET & ROOT  ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; scroll-behavior: smooth; /* Added smooth scroll */ }
+  :root {
+    --text-body: "Manrope", system-ui, sans-serif;
+    --text-heading: "Hedvig Letters Serif", Georgia, serif;
+    --btn-radius: .55rem;
+    --glass-bg: rgba(0,0,0,.15); /* MAYANK */
+    --glass-blur: 12px;
+    --section-padding: 6rem 2rem; /* Define standard section padding */
+  }
+  body { 
+    font-family: var(--text-body); 
+    color: #fff; 
+    background-color: #000; 
+  }
+
+  /* ----------  HERO SECTION  ---------- */
+  .hero {
+    position: relative; /* Needed for absolute positioning of children */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Keep flex for content alignment */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    overflow: hidden; /* Hide overflow from background */
+  }
+
+  /* Added Hero Background Element */
+  .hero-background {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("hero.png") center center / cover no-repeat;
+    z-index: -1; /* Place it behind content */
+  }
+
+  /* logo styles */
+  .logo { 
+    position: absolute; /* Position relative to hero */
+    top: 1.75rem; 
+    left: 2rem; 
+    z-index: 10; /* Ensure logo is above background */
+    display: flex; 
+    align-items: center; 
+    gap: .4rem; 
+    text-decoration: none; 
+    color: #ffffff; /* Set logo text to white for visibility on dark background */
+  }
+  .logo img {
+    height: 2rem; /* Match the approximate cap-height of the Tenanter wordmark */
+    width: auto;     /* Maintain aspect ratio */
+  }
+  .logo span { 
+    font-weight: 600; 
+    letter-spacing: .5px; 
+    font-size: 1.2rem; 
+  }
+
+  /* Updated styles for top-right navigation links */
+  .top-nav-links {
+    position: absolute;
+    top: 1.75rem;
+    right: 2rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-end; /* Align items to the right */
+  }
+
+  .social-link, .nav-link {
+    text-decoration: none;
+    color: #fff; 
+    font-size: 1.2rem; /* Adjusted for better fit */
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: 0.5rem; /* Space between links */
+  }
+
+  .social-link img, .nav-link img { /* Style for icons if any */
+    width: 28px; /* Adjusted icon size */
+    height: 28px; /* Adjusted icon size */
+  }
+
+  .social-link:hover, .nav-link:hover {
+    color: #fbdd42; 
+  }
+  
+  .nav-link span {
+    font-weight: 300; /* Match button font weight */
+  }
+
+  /* ----------  HERO COPY  ---------- */
+  .heroContent {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 800px;
+    padding-inline: 1rem;
+    position: relative; /* Ensure content is above background */
+    z-index: 1;
+    /* Shift upward so headline sits nicely inside the lighthouse beam */
+    transform: translateY(-6vh);
+  }
+  .heroContent h1 {
+    font-family: var(--text-heading);
+    font-weight: 400;
+    /* Slightly reduced sizes to sit more comfortably against the visual background */
+    font-size: clamp(1.9rem, 4.8vw, 4.2rem);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.1px; /* Reduced space between characters */
+    text-shadow: 0 3px 14px rgba(18, 29, 39, 0.853);
+    border: 1px solid #fbdd42;
+  }
+
+  /* ----------  HERO BUTTONS  ---------- */
+  .heroActions {
+    margin-top: 2.5rem;
+    display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
+  }
+  .btn {
+    padding: .7rem 1.6rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform .18s, box-shadow .18s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  .btn-primary { 
+    background: #000000df; 
+    color: #fff; 
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  .btn-secondary { 
+    font-size: 1.2rem;
+    background: #ffffff; 
+    color: #000; 
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
+  /* ----------  SHARED SECTION STYLES ---------- */
+  .section {
+    padding: var(--section-padding);
+    max-width: 1200px; /* Limit content width */
+    margin: 0 auto; /* Center sections */
+    text-align: center;
+  }
+  .section-title {
+    font-family: var(--text-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+
+  /* Reduce top padding for specific sections */
+  .features,
+  .infrastructure,
+  .cta-banner {
+    padding-top: 3rem; /* Reduced from default 6rem */
+    padding-bottom: 3rem; /* Added to reduce bottom space */
+  }
+
+  /* ---------- FEATURES SECTION ---------- */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 0.8rem; /* Reduced gap */
+    text-align: left;
+  }
+  .feature-card {
+    background: rgba(194, 0, 0, 0); /* Subtle background */
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0);
+  }
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+    font-size: 1.3rem;
+  }
+   .feature-card p {
+    font-size: 1rem;
+    color: #d1cfc9;
+    line-height: 1.5;
+  }
+  
+  .feature-icon {
+    margin-bottom: 1rem;
+    color: #fbdd42; /* Icon color */
+  }
+
+  /* Placeholder for icon */
+  /* .feature-card::before {
+    content: '⚙️'; /* Placeholder Icon */
+    /* display: block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  } */
+
+  /* ---------- INFRASTRUCTURE SECTION ---------- */
+  .infra-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2rem;
+    justify-content: center;
+  }
+  .infra-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    flex: 1; /* Allow cards to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 500px; /* Maximum width */
+    text-align: center;
+  }
+  .infra-card img { /* Placeholder styling */
+    width: 150px;
+    height: 150px;
+    background: #333; /* Placeholder color */
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .infra-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .infra-card p {
+    font-size: 1rem;
+    color: #d1cfc9;
+    line-height: 1.5;
+  }
+
+  /* ---------- CTA BANNER SECTION ---------- */
+  .cta-banner {
+    background: linear-gradient(180deg, #e9a03f, #002b54), url(placeholder-banner.jpg) center center / cover; /* Placeholder BG */
+    padding-left: 2rem; /* Keep horizontal padding for content */
+    padding-right: 2rem; /* Keep horizontal padding for content */
+    border-radius: 0; /* Remove border radius for edge-to-edge */
+    margin: 3rem 0; /* Apply vertical margin, remove horizontal auto margin */
+    max-width: none; /* Override max-width from .section */
+    width: 100%; /* Ensure full width */
+    text-align: center;
+    position: relative; /* For potential decorative elements */
+    overflow: hidden;
+  }
+   .cta-banner h2 {
+    font-family: var(--text-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+   }
+   .cta-banner p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+   }
+   .cta-banner .btn { /* Use existing button styles */
+     font-size: 1.2rem;
+     padding: 0.8rem 2rem;
+   }
+
+  /* ----------  RESPONSIVE  ---------- */
+  @media (max-width: 800px) {
+    :root {
+      --section-padding: 4rem 1rem; /* Adjust padding for mobile */
+    }
+  }
+
+  /* ---------- SCROLL DOWN ARROW (Wrapper + Arrow) ---------- */
+  /* Wrapper handles vertical motion & positioning */
+  .scroll-bounce {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    /* Start centered horizontally */
+    transform: translateX(-50%);
+    /* Start fully transparent */
+    opacity: 0;
+    /* Apply TWO animations, separated by comma */
+    animation:
+      /* 1. Fade in: duration, timing, delay, iterations, fill-mode */
+      fadeIn 0.5s ease-out 1s 1 forwards,
+      /* 2. Bounce: duration, timing, delay (after fade-in), iterations */
+      bounceOnly 2s ease-in-out 1.5s infinite;
+    z-index: 5;
+    cursor: pointer;
+    /* Add transition for fade-out */
+    transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+  }
+
+  /* Class added by JS to hide the arrow */
+  .scroll-bounce.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Arrow only holds the 45° rotation & styling */
+  .scroll-down-arrow {
+    display: block; /* Use block for sizing */
+    width: 24px;
+    height: 24px;
+    border: solid #ffffffc2;
+    border-width: 0 3px 3px 0;
+    /* Only rotation here */
+    transform: rotate(45deg);
+    /* Remove properties now handled by wrapper */
+    /* position, bottom, left, animation, z-index, opacity, cursor removed */
+  }
+
+  /* Keyframes for fade-in (runs once) */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Keyframes for bounce (runs infinitely, only vertical movement) */
+  @keyframes bounceOnly {
+    /* Ensure transform includes translateX for centering */
+    0%, 100% { transform: translate(-50%, 0); }   /* Settle */
+    40%, 80% { transform: translate(-50%, -4px); } /* Up */
+    60%      { transform: translate(-50%, 1px); }  /* Down */
+  }
+
+  /* ---------- PROBLEM STATEMENT SECTION ---------- */
+  .problem-statement {
+     /* Uses .section for padding/max-width */
+     text-align: left; /* Override section center align */
+     padding-bottom: 3rem; /* Reduced bottom padding */
+  }
+  .problem-layout {
+    display: flex;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    align-items: center;
+    gap: 3rem;
+  }
+  .problem-text {
+    flex: 1; /* Take available space */
+    min-width: 300px; /* Minimum width before wrapping */
+  }
+  .problem-text h2 {
+    font-family: var(--text-heading);
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .problem-text p {
+    font-size: 1.1rem;
+    color: #d1cfc9;
+    line-height: 1.6;
+    max-width: 500px; /* Limit text width */
+  }
+  .problem-image {
+    flex: 1; /* Take available space */
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .problem-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-background"></div> <!-- Added background element -->
+
+    <!-- Logo -->
+    <a href="https://usetenanter.com/" class="logo">
+      
+      <!-- Lighthouse icon placed right next to the Tenanter text -->
+      <img src="lighthouse.png" alt="Lighthouse icon" />
+      <span>Tenanter</span>
+    </a>
+
+    <!-- Updated Top Right Navigation Links -->
+    <div class="top-nav-links">
+      <a href="team.html" class="nav-link">
+        <span>Contact Us</span>
+      </a>
+    </div>
+
+    <!-- ==== Hero copy ==== -->
+    <div class="heroContent">
+      <h1 id="heroHeadline">
+        <span>Tenant screening,</span>
+        <span>powered by AI</span>
+      </h1>
+
+      <div class="heroActions">
+        <a href="https://calendly.com/singamreddy-mayank/30min" target="_blank" class="btn btn-secondary" style="text-decoration: none;">Schedule demo</a>
+        <a href="https://tally.so/r/mBgEK7" target="_blank" class="btn btn-primary" style="text-decoration: none;">Get updates</a>
+      </div>
+    </div>
+
+    <!-- Scroll down indicator -->
+    <div class="scroll-bounce">
+      <a href="#problem-statement" class="scroll-down-arrow" aria-label="Scroll down"></a>
+    </div>
+
+  </section>
+
+  <!-- ===== PROBLEM STATEMENT ===== -->
+  <section class="section problem-statement" id="problem-statement">
+    <div class="problem-layout">
+      <div class="problem-text">
+        <h2>Tenanter uses AI to do <span style="color: #fbd132;">deep research</span>, so you can make the right decision.</h2>
+        <p>Weed out the bad apples, so you can focus on what matters.</p>
+      </div>
+      <div class="problem-image">
+        <img src="subcomponent.png" alt="AI-powered tenant screening">
+      </div>
+    </div>
+  </section>
+
+    <!-- ===== FEATURES GRID ===== -->
+<section class="section features">
+  <h2 class="section-title">Evidence-First Screening Features</h2>
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <i data-feather="file-text" class="feature-icon" style="width:48px;height:48px;"></i>
+      <h3>Evidence-Backed Reports</h3>
+      <p>All the standard checks—credit, eviction, criminal (where legal), SSN—summarized with clear Pass/Review flags and source links.</p>
+    </div>
+
+    <div class="feature-card">
+      <i data-feather="dollar-sign" class="feature-icon" style="width:48px;height:48px;"></i>
+      <h3>Verified Income & Employment</h3>
+      <p>Payroll/bank connections and doc forensics validate pay stubs and employment—no more “stated income” guesswork.</p>
+    </div>
+
+    <div class="feature-card">
+      <i data-feather="phone-call" class="feature-icon" style="width:48px;height:48px;"></i>
+      <h3>Authentic Landlord References</h3>
+      <p>AI agents call prior landlords, verify ownership against property records, record & summarize calls, and catch fake references.</p>
+    </div>
+
+    <div class="feature-card">
+      <i data-feather="search" class="feature-icon" style="width:48px;height:48px;"></i>
+      <h3>Deep Research & Conflicts</h3>
+      <p>Agents crawl court dockets, news, and public records tied to the applicant's identity—surfacing lawsuits, address mismatches, and inconsistencies.</p>
+    </div>
+
+    <div class="feature-card">
+      <i data-feather="shield" class="feature-icon" style="width:48px;height:48px;"></i>
+      <h3>Fraud & Identity Defense</h3>
+      <p>Tampered documents, synthetic IDs, and recycled templates flagged with explain-why notes and confidence levels.</p>
+    </div>
+
+    <div class="feature-card">
+      <i data-feather="clock" class="feature-icon" style="width:48px;height:48px;"></i>
+      <h3>Fast, Fair, & Compliant</h3>
+      <p>24 to 48h SLA, consent capture, applicant copy, and one-click adverse-action notices—with guardrails for fair-chance housing.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ===== INFRASTRUCTURE ===== -->
+  <section class="section infrastructure">
+    <h2 class="section-title">Why landlords choose Tenanter</h2>
+    <div class="infra-layout">
+      <div class="infra-card">
+        <!-- <img src="placeholder-infra1.png" alt="Placeholder Image 1">  -->
+        <h3>Save Time</h3>
+        <p>Automate the entire screening process from application to decision.</p>
+      </div>
+      <div class="infra-card">
+        <!-- <img src="placeholder-infra2.png" alt="Placeholder Image 2">  -->
+        <h3>Reduce Risk</h3>
+        <p>Make confident decisions with deeper insights into applicant history.</p>
+      </div>
+      <div class="infra-card">
+        <!-- <img src="placeholder-infra3.png" alt="Placeholder Image 3">  -->
+        <h3>Keep Better Tenants</h3>
+        <p>A more comprehensive research process improves your onboarding.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+   <!-- ===== CTA BANNER ===== -->
+   <section class="cta-banner">
+      <h2>Want to chat?</h2>
+      <p>Ready to upgrade your tenant screening?</p>
+      <div class="heroActions">
+        <a href="https://calendly.com/singamreddy-mayank/30min" target="_blank" class="btn btn-secondary" style="text-decoration: none;">Get in touch</a>
+        <a href="https://tally.so/r/mBgEK7" target="_blank" class="btn btn-primary" style="text-decoration: none;">Get updates</a>
+      </div>
+   </section>
+
+  <!-- ----------  JS (mobile menu)  ---------- -->
+  <script>
+    // --- Scroll Arrow Fade Out Logic ---
+    const scrollArrowWrapper = document.querySelector('.scroll-bounce');
+
+    if (scrollArrowWrapper) { // Check if the element exists
+      window.addEventListener('scroll', () => {
+        // Check if scrolled down more than a small threshold (e.g., 10px)
+        if (window.scrollY > 200) {
+          scrollArrowWrapper.classList.add('hidden');
+        } else {
+          // Optional: Remove 'hidden' if scrolled back to top, allows arrow to reappear
+          // scrollArrowWrapper.classList.remove('hidden');
+        }
+      }, { passive: true }); // Use passive listener for performance
+    }
+    
+    // Feather Icons
+    feather.replace();
+  </script>
+
+</body>
+</html>

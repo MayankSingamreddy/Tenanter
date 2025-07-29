@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet the Tenanter Team">
+  <link rel="icon" href="">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400&family=Manrope:wght@300;400&display=swap" rel="stylesheet">
+
+  <title>Team - Tenanter</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { 
+      height: 100vh; 
+      margin: 0; 
+      scroll-behavior: smooth; 
+    }
+    body {
+      font-family: "Manrope", system-ui, sans-serif;
+      color: #fff;
+      background: url("hero.png") center center / cover no-repeat fixed; /* Fixed background */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+      justify-content: center;
+    }
+
+    /* Logo styles (similar to index.html) */
+    .logo {
+      position: absolute;
+      top: 1.75rem;
+      left: 2rem;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      text-decoration: none;
+      color: #ffffff; /* Ensuring logo text is white on this background */
+    }
+    .logo img {
+      height: 2rem; /* Match the approximate cap-height of the Tenanter wordmark */
+      width: auto;     /* Maintain aspect ratio */
+    }
+    .logo span {
+      font-weight: 600;
+      letter-spacing: .5px;
+      font-size: 1.2rem;
+    }
+
+    .team-container {
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for readability */
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 700px;
+      width: 100%;
+      transform: translateY(-6vh);
+      text-align: left;
+    }
+
+    .team-container h1 {
+      font-family: "Hedvig Letters Serif", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .team-member {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .team-member:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .team-member h2 {
+      font-family: "Hedvig Letters Serif", Georgia, serif;
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+      font-weight: 400;
+    }
+
+    .team-member .title {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .team-member p {
+      line-height: 1.6;
+      font-size: 1.1rem; /* Consistent with other body text on the site */
+      color: #d1cfc9;    /* Softer, secondary text color */
+      margin-top: 1rem;   /* Space between title and bio */
+      margin-bottom: 1.5rem; /* Space between bio and links */
+      max-width: 60ch;    /* Improve readability by constraining line width */
+    }
+    
+    .team-member a {
+      color: #fbdd42; /* Using the site's highlight yellow for links */
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .team-member a:hover {
+      text-decoration: underline;
+    }
+
+    .member-links {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.5rem 0;
+    }
+    .member-links li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      .logo {
+        top: 1rem;
+        left: 1rem;
+      }
+      .logo span { font-size: 1rem; }
+      .team-container {
+        margin-top: 6rem;
+        padding: 1.5rem;
+      }
+      .team-container h1 {
+        font-size: 1.8rem;
+      }
+      .team-member h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="logo">
+    <!-- Lighthouse icon placed right next to the Tenanter text -->
+    <img src="lighthouse.png" alt="Lighthouse icon" />
+    <span>Tenanter</span>
+  </a>
+
+  <div class="team-container">
+    <h1>About Us</h1>
+
+    <div class="team-member">
+      <h2>Mayank Singamreddy - Creator & Architect</h2>
+      <p>After reading horror stories about good people getting cheated by bad tenants, I knew there had to be a better way to screen tenants.</p>
+      <ul class="member-links">
+        <li>Experience - <a href="https://linkedin.com/in/mayank-singamreddy" target="_blank">LinkedIn</a></li>
+        <li>Personal site - <a href="https://singamreddy.com" target="_blank">Singamreddy.com</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html> 

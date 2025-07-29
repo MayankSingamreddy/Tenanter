@@ -1,0 +1,293 @@
+﻿Hero (5–6 short lines)
+Tenant screening, finally done right.
+ Evidence‑first, audit‑ready reports.
+Income that’s verified, not just stated.
+Real landlord references—no fakes.
+24–48h turnaround, money‑back SLA.
+Pass the fee to the applicant; you keep control.
+________________
+
+
+One‑sentence + 2–3 line summary
+One‑liner: Tenanter is an evidence‑first tenant screening copilot for small landlords.
+Summary (2–3 lines):
+ Tenanter verifies identity/SSN, income/employment, criminal/eviction history (where legal), and authentic prior‑landlord references—then delivers a transparent, evidence‑backed report in 24–48 hours. We combine human‑in‑the‑loop operations with AI agents (voice calling, document forensics, and deep web research) so DIY landlords get professional‑grade screening without hiring a property manager.
+________________
+
+
+Product hypothesis
+1. DIY landlords are leaving risk on the table (missed checks, fake documents, fake landlord references).
+
+2. They don’t want a black‑box “score”; they want verifiable evidence and simple decisions.
+
+3. If we deliver an audit‑ready report faster than they can do it themselves—and cheaper than an agent— they will pay per applicant and reuse Tenanter for every vacancy.
+
+________________
+
+
+Positioning
+   * For: Independent landlords (1–20 doors) who self‑manage or use partial services.
+
+   * Promise: Professional‑grade screening without the overhead, bias, or black‑box opacity.
+
+   * Wedge: Evidence‑first + human‑vetted AI that closes the gaps: income fraud, fake refs, sloppy adverse‑action workflows.
+
+________________
+
+
+What Tenanter does (offerings)
+Core, required checks (today)
+      1. Identity & SSN verification
+
+         * Government ID capture + selfie/liveness.
+
+         * SSN match (consent‑based). Death‑file flag where applicable.
+
+         * Synthetic identity heuristics (DOB/SSN issuance anomalies, address history mismatches).
+
+            2. Income & employment verification
+
+               * Payroll/bank connection (with applicant consent) to confirm employer, pay frequency, net deposits.
+
+               * Automatic reconciliation: stated income ↔ deposits ↔ pay stubs.
+
+               * Doc forensics on uploaded pay stubs/W‑2s (PDF metadata, layer inconsistencies, templating patterns).
+
+                  3. Credit, eviction, and criminal history (where legal)
+
+                     * Pull rental‑relevant credit signals.
+
+                     * Eviction and landlord‑tenant civil filings (with known data‑quality disclaimers).
+
+                     * Criminal checks aligned to local rules (no blanket bans; arrests ≠ convictions; fair‑chance workflows).
+
+                        4. Prior‑landlord verification
+
+                           * Voice AI agent plus human QA to call prior (not current) landlords, with recording & disclosure.
+
+                           * Authenticity checks: county assessor/property tax databases, business registrations, rent roll artifacts, lease naming consistency, and knowledge‑based questions (rent amount, dates, unit details, deposit terms).
+
+                           * Fake‑ref detection: mismatch between claimed owner and deed records; prepaid mobile patterns; email/domain mismatch.
+
+                              5. Adverse‑action helper & compliance kit
+
+                                 * Capture applicant consent at intake; deliver copy of report.
+
+                                 * Pre‑filled adverse‑action notices when a decision is influenced by report contents.
+
+                                 * Time‑stamped audit log (what was checked, when, by whom).
+
+AI‑enabled extensions (LLM + agents, near‑term)
+                                    * Landlord‑call copilot: Generates tailored KBA questions; live monitors calls and prompts follow‑ups; stores transcripts with summaries.
+
+                                    * Automated deep research: Targeted crawling of public records (business filings, small‑claims portals, housing court calendars), and reputable news/legal databases to surface landlord‑tenant disputes tied to the applicant’s identity (name + prior addresses + employer).
+
+                                    * Document fraud classifier: LLM‑assisted reasoning over doc structure + traditional forensic signals; labels confidence and cites anomalies.
+
+                                    * Narrative “Evidence Brief”: LLM synthesizes all artifacts into a short, source‑linked brief; every claim is backed by a document, database hit, or call log.
+
+                                    * Policy guardrails: LLM policy engine that red‑flags use of protected‑class features and enforces decision rules you set (e.g., “Monthly rent ≤ 30% of verified gross income unless co‑signer present”).
+
+                                    * Dispute assistant: If an applicant disputes something, an agent guides the re‑verification workflow and tracks outcomes.
+
+Optional signals (with clear boundaries)
+                                       * Rental‑payment verification: Identify recurring rent‑like payments in bank data from prior lease.
+
+                                       * Address history reconstruction: Utility bills, USPS NCOA patterns, credit header data (where permissible).
+
+                                       * Reference triangulation: Prior neighbors or building managers only with consent and in line with local laws.
+
+We explicitly do not infer or use any protected attributes (race, religion, disability, family status, etc.), and we avoid social media “character” inference.
+________________
+
+
+The Tenanter report (what the landlord receives)
+                                          * Dashboard view: Pass / Needs Review / Fail by section.
+
+                                          * Evidence Brief: 1–2 pages with citations (click to the artifact: transcript, doc, database record).
+
+                                          * Exceptions list: Any mismatch or uncertainty, with recommended follow‑ups.
+
+                                          * Decision checklist: You set thresholds; we compute them (e.g., income‑to‑rent ratio, collections, recent evictions).
+
+                                          * Adverse‑action generator: One click to produce the required notices and share the report with the applicant.
+
+________________
+
+
+How it works (copy block)
+                                             1. Invite the applicant → They consent and connect payroll/bank; upload ID and any requested docs.
+
+                                             2. Tenanter verifies → Identity/SSN, income, history checks, and we call prior landlords (no fake references).
+
+                                             3. You get an evidence‑first report in 24–48h—with every claim backed by a source.
+
+                                             4. Decide confidently → Approve, ask for a co‑signer, or send an adverse‑action notice in one click.
+
+CTA: Screen your next tenant now → (Pass fee to applicant.)
+________________
+
+
+Compliance, privacy, fairness (tell‑it‑like‑it‑is)
+                                                * We run consent‑based checks and provide the applicant a copy of the report upon request.
+
+                                                * We support adverse‑action notices when a decision is influenced by report contents.
+
+                                                * We separate facts (verified) from opinions (risk notes) and never use protected attributes.
+
+                                                * We keep a full audit trail and store PII in a segregated, access‑controlled vault.
+
+                                                * Criminal data is handled where legal, with fair‑chance guidance and no “arrest‑only” disqualifications.
+
+________________
+
+
+What makes Tenanter different
+                                                   * Evidence over scores. Every claim is referenced and reviewable.
+
+                                                   * Close the real gaps. Fake pay stubs and fake landlords are the biggest holes—our AI + human workflow targets those.
+
+                                                   * 24–48h SLA. If we miss it, you don’t pay.
+
+                                                   * DIY‑friendly. Keep control; pass the fee to applicants; no subscription required to start.
+
+________________
+
+
+Pricing (testable copy you can A/B)
+                                                      * Basic ($29/applicant): ID/SSN check, credit/eviction/criminal (where legal), income doc upload + fraud scan.
+
+                                                      * Verified ($59/applicant): Everything in Basic + payroll/bank verification and one prior‑landlord call.
+
+                                                      * White‑Glove ($89/applicant): Everything in Verified + same‑day rush (when feasible), two landlord calls, and the Adverse‑Action assistant.
+
+                                                      * Optional Starter plan ($49/mo): Includes 2 screenings; $35 each additional.
+
+Copy: “Pass the fee to the applicant in your listing. Keep your margins, keep your time.”
+________________
+
+
+Objection handling (micro‑copy)
+                                                         * “I already use [X] for reports.” Great—keep it. Tenanter adds verified income and authentic landlord references + an adverse‑action helper you don’t have today.
+
+                                                         * “I don’t want AI making decisions.” It doesn’t. We present evidence and your pre‑set rules. You make the call.
+
+                                                         * “Will this slow me down?” Our SLA is 24–48h; most checks auto‑resolve within hours. We refund if we miss.
+
+________________
+
+
+“Sell before you build” package (ready to ship)
+                                                            * One‑page landing copy:
+
+
+ Tenant screening, finally done right. Evidence‑first, audit‑ready reports in 24–48h.
+We verify identity/SSN, real income, criminal/eviction history, and speak with prior landlords—catching fake references and fake pay stubs before they become your problem.
+Start with your next applicant. $59. Money‑back if not delighted.
+
+
+                                                            * Pilot offer:
+
+
+ Charter Pilot: 10 screenings for $499. Same‑day priority, 2 landlord calls per applicant, dedicated Slack, and co‑created decision rules.
+
+
+                                                            * Guarantee:
+
+
+ We’ll either deliver a complete, evidence‑first report in 48h—or you pay $0.
+
+
+________________
+
+
+Product architecture (high‑level, pragmatic)
+Orchestration:
+                                                               * LLM‑based Case Orchestrator plans tasks (fetch payroll, verify SSN, schedule calls), executes tools, and writes structured findings.
+
+                                                               * Tool adapters for: IDV, SSN/CBSV, payroll/bank APIs, background report providers, county/assessor lookups, telephony, and call recording/transcription.
+
+                                                               * Policy engine (rules + LLM guardrails) ensures compliance boundaries, fair‑chance prompts, and red‑flags protected‑class inferences.
+
+Human‑in‑the‑loop:
+                                                                  * Analyst reviews anomalies, approves adverse‑action triggers, and greenlights report release.
+
+Data & privacy:
+                                                                     * Evidence store (immutable references to artifacts), PII vault, encrypted call recordings with consent banners, per‑case access control, full audit log.
+
+Reporting:
+                                                                        * Deterministic JSON schema → human‑readable PDF/HTML → landlord dashboard.
+
+________________
+
+
+KPI targets (for your early deck)
+                                                                           * Time‑to‑report: p50 ≤ 12h, p90 ≤ 48h.
+
+                                                                           * Fraud detection: ≥ 10% of applicants flagged for doc/reference anomalies (varies by market).
+
+                                                                           * Repeat rate: ≥ 70% of first‑time users screen their next applicant with Tenanter.
+
+                                                                           * NPS: ≥ 60 with small landlords.
+
+                                                                           * Refund rate: ≤ 5% (SLA misses).
+
+________________
+
+
+Risks & our stance
+                                                                              * Data quality in eviction/criminal datasets: we surface source and recency, and we never treat “arrests” as disqualifying.
+
+                                                                              * Over‑automation risk: AI drafts; humans approve. No unsourced claims.
+
+                                                                              * Regulatory variance by city/state: we ship with templates and toggles; landlord chooses what to run.
+
+                                                                              * Ethics: No social media profiling, no protected‑class inference, no shadow scoring.
+
+________________
+
+
+FAQ (snippets)
+                                                                                 * Does Tenanter work if my applicant won’t connect payroll/bank?
+ Yes—upload documents; we’ll run doc forensics and request alternative proof (W‑2 + prior rent receipts). Confidence is labeled.
+
+                                                                                 * Can I pass the fee to applicants?
+ Yes. Add the screening link to your listing and lease instructions.
+
+                                                                                 * Do you integrate with my current listing/lease tool?
+ We provide a shareable application link and exportable PDFs. Integrations (Zillow/Avail/DoorLoop/etc.) are on the roadmap as we scale.
+
+________________
+
+
+Voice & tone guidelines (for your site)
+                                                                                    * Direct: “Verify income. Catch fakes. Call real landlords.”
+
+                                                                                    * Transparent: “Here’s the evidence. Here’s what we couldn’t verify.”
+
+                                                                                    * Respectful: “Applicants have rights; we make compliance simple.”
+
+                                                                                    * Confidence without hype: Back every promise with an SLA or a refund.
+
+________________
+
+
+Visual/brand suggestions
+                                                                                       * Metaphor: “Evidence stack” motif—cards with checkmarks and source links.
+
+                                                                                       * Hero visual: A calm, audit‑ready report with highlighted citations and a waveform snippet from a landlord call.
+
+                                                                                       * Trust cues: Consent banner, “Adverse‑action ready,” “Human‑reviewed,” “48h SLA.”
+
+________________
+
+
+Ready‑to‑paste site sections (short copy)
+Trust banner:
+Consent‑based checks • Evidence‑first reports • Adverse‑action ready • Human‑reviewed
+Micro‑headline:
+Stop guessing. Start approving with confidence.
+CTA:
+Screen your next tenant → (24–48h, $59–$89, pass fee to applicant)
+Footer line:
+Fair‑chance compliant where applicable • No social media profiling • Evidence, not opinions
